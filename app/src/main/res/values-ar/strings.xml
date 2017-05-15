@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculator</string>
+    <string name="app_name">الآلة الحاسبة</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -9,13 +9,13 @@
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
-    <string name="del">DEL</string>
+    <string name="del">حذف</string>
     <string name="zero">0</string>
-    <string name="equal">=</string>
+    <string name="equal">يساوي</string>
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="multiply">x</string>
     <string name="divide">/</string>
-    <string name="AC">AC</string>
+    <string name="AC">مسح الكل</string>
     <string name="point">.</string>
 </resources>

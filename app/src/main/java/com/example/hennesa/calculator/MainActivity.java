@@ -1,7 +1,7 @@
 package com.example.hennesa.calculator;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.calculator_table_layout);
     }
 
     public void calcBtnPressed(View v) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("ABD_Calc_Main",tvSec.getText().toString());
         // check for pressed button type
         //
-        if(b.getText().equals("+")) {
+        if (b.getText().equals(getString(R.string.plus))) {
             if(ctNum.equals("")) {
                 if(tvSec.getText().toString().equals("")) {
                     tvSec.setText(tvMain.getText());
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
             tvSec.append(" + ");
             c.add();
-        } else if(b.getText().equals("-")) {
+        } else if (b.getText().equals(getString(R.string.minus))) {
             if(ctNum.equals("")) {
                 if(tvSec.getText().toString().equals("")) {
                     tvSec.setText(tvMain.getText());
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
             tvSec.append(" - ");
             c.subtract();
-        } else if(b.getText().equals("x")) {
+        } else if (b.getText().equals(getString(R.string.multiply))) {
             if(ctNum.equals("")) {
                 if(tvSec.getText().toString().equals("")) {
                     tvSec.setText(tvMain.getText());
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
             tvSec.append(" x ");
             c.multiply();
-        } else if(b.getText().equals("/")) {
+        } else if (b.getText().equals(getString(R.string.divide))) {
             if(ctNum.equals("")) {
                 if(tvSec.getText().toString().equals("")) {
                     tvSec.setText(tvMain.getText());
@@ -91,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
             }
             tvSec.append(" / ");
             c.divide();
-        } else if(b.getText().equals("del")) {
+        } else if (b.getText().equals(getString(R.string.del))) {
             if(!ctNum.equals("")) {
                 tvSec.setText(tvSec.getText().toString().toCharArray(), 0, tvSec.getText().length() - 1);
                 ctNum = ctNum.substring(0,ctNum.length()-1);
             }
-        }  else if(b.getText().equals("=")) {
+        } else if (b.getText().equals(getString(R.string.equal))) {
             if(!ctNum.equals("")) {
                 c.setNumber(ctNum);
                 ctNum = "";
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
             tvSec.setText("");
             c = new Calculator();
-        } else if(b.getText().equals("AC")) {
+        } else if (b.getText().equals(getString(R.string.AC))) {
             tvMain.setText("0");
             tvSec.setText("");
             c = new Calculator();
