@@ -18,6 +18,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.calculator_table_layout);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        TextView tvMain = (TextView) findViewById(R.id.textView);
+        TextView tvSec = (TextView) findViewById(R.id.textView2);
+        outState.putString("TVMAIN", tvMain.getText().toString());
+        outState.putString("TVSEC", tvSec.getText().toString());
+        outState.putSerializable("CALCULATOR", c);
+        outState.putString("CTNUM", ctNum);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        TextView tvMain = (TextView) findViewById(R.id.textView);
+        TextView tvSec = (TextView) findViewById(R.id.textView2);
+        tvMain.setText(savedInstanceState.getString("TVMAIN"));
+        tvSec.setText(savedInstanceState.getString("TVSEC"));
+        c = (Calculator) savedInstanceState.getSerializable("CALCULATOR");
+        ctNum = savedInstanceState.getString("CTNUM");
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
     public void calcBtnPressed(View v) {
 
         Button b = (Button) findViewById(v.getId());

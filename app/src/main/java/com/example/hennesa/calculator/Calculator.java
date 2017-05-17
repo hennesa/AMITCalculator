@@ -1,10 +1,12 @@
 package com.example.hennesa.calculator;
 
+import java.io.Serializable;
+
 /**
  * Created by AbdelMoh05 on 5/5/2017.
  */
 
-public class Calculator {
+public class Calculator implements Serializable {
     private double number;
     private double result;
     private Instruction inst = Instruction.ADD;
